@@ -4,13 +4,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%= @host.first_name %> et bienvenue chez nous !</h1>
+    <h1>Salut <%= @host.first_name %>,</h1>
     <p>
       Il y a un nouveau participant à ton évènement <%= @event.title %>.
     </p>
     <p>
-      Il y a donc désormais <%= @event.users.count %> participants à ton évènement.
+      Nombre de participants : <%= @event.users.count %>
     </p>
-    <p> Allez, bisous ! </p>
   </body>
 </html>
