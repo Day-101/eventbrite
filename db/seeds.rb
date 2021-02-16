@@ -15,7 +15,7 @@ Event.destroy_all
     description: Faker::Lorem.paragraph_by_chars(number: rand(100..500)),
     start_date: Faker::Date.between(from: "2021-03-01", to: "2021-03-31"),
     duration: [30, 60, 90, 120].sample,
-    price: rand(1..1000),
+    price: rand(20..50),
     location: Faker::Address.city,
     host: User.all.sample)
 end
