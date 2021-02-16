@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center">
+  <div class="card" style="width: 18rem;">
+    <div class="list-group list-group-flush">
+  		<div class="list-group-item">Nom : <%= @user.last_name %></div>
+  		<div class="list-group-item">Prènom : <%= @user.first_name %></div>
+  		<div class="list-group-item">Email : <%= @user.email %></div>
+  		<div class="list-group-item">Description : <%= @user.description %></div>
+		</div>
+		<div class="btn"><%= link_to "Modifier mon profil", edit_user_registration_path %></div>
+  </div>
+</div>
+
+
+<h1 class="mb-5 text-center">Vos événements</h1>
+
+<div class="card-columns">
+  <% @user.events.each do |event| %>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><small class="text-muted"><%= event.start_date.strftime("%d/%m/%Y") %></small></p>
+        <h3 class="card-title "><%= link_to "#{event.title}", event_path(event.id), class: "card-title" %></h3>
+        <h6 class="card-title text-center">Tarif : <%= event.price %> €</h6>
+        <h5 class="card-title text-center">À <%= event.location %></h5>
+      </div>
+    </div>
+  <%  end %>
+</div>

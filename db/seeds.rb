@@ -3,6 +3,7 @@ User.destroy_all
   User.create!(first_name: Faker::Games::Overwatch.hero,
                last_name: Faker::Games::Overwatch.location,
                email: "user#{index}" + "@yopmail.com",
+               password: "000000",
                description: Faker::Lorem.paragraph_by_chars(number: rand(20..50)))
 end
 

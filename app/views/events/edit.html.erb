@@ -1,0 +1,11 @@
+<div class="form mx-auto mt-5">
+<% if@event.invalid?  %>
+  <div class="alert alert-danger">
+    <% @event.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+<% end %>
+  <h1 class="h3 mb-3 font-weight-normal Gyellow text-center">Editer un événement</h1>
+  <%= render "layouts/eventform" %>
+</div>

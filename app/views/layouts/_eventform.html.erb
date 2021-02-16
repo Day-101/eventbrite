@@ -1,0 +1,10 @@
+<%= form_with model: @event, class:"form-signin text-center" do |form| %>
+	<%= form.text_field :start_date, placeholder: 'Date', class:"form-control" %>
+	<%= form.text_field :duration, placeholder: 'Durée', class:"form-control" %>
+	<%= form.text_field :title, placeholder: 'Title', class:"form-control" %>
+	<%= form.text_area :description, placeholder: 'Description', class:"form-control mt-2" %>
+	<%= form.text_field :location, placeholder: 'Ville', class:"form-control" %>
+	<%= form.text_field :price, placeholder: 'Tarif', class:"form-control" %>
+
+	<%= form.submit "Valider", class:"btn btn-warning mt-3"%>
+<% end %>

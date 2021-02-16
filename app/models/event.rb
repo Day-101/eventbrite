@@ -28,10 +28,14 @@ class Event < ApplicationRecord
     presence: true
 
   def is_passed?
-    errors.add(:base, "Start date can't be set in the past.") if start_date < DateTime.now
+    errors.add(:base, "Start date can't be set in the past.") if start_date.to_datetime < DateTime.now
   end
 
   def is_multiple_of_5?
     errors.add(:base, "Duration has to be a multiple of 5.") unless duration % 5 == 0
+  end
+
+  def define_end_date
+    end_date = start_date + duration.minutes
   end
 end

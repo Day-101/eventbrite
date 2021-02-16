@@ -1,0 +1,16 @@
+<h1 class="mb-5">Tous les événements</h1>
+
+<div class="card-columns">
+  <% Event.order(:created_at).each do |event| %>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><small class="text-muted"><%= event.start_date.strftime("%d/%m/%Y") %></small></p>
+        <h3 class="card-title "><%= link_to "#{event.title}", event_path(event.id), class: "card-title" %></h3>
+        <h6 class="card-title text-center">Tarif : <%= event.price %> €</h6>
+        <h5 class="card-title text-center">À <%= event.location %></h5>
+      </div>
+    </div>
+  <%  end %>
+</div>
+
+

@@ -61,3 +61,7 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "faker"
 gem "dotenv-rails"
+gem 'devise'
+gem "better_errors"
+gem "binding_of_caller"
+gem 'table_print'
