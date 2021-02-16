@@ -22,7 +22,7 @@ end
 
 Attendance.destroy_all
 10.times do
-  Attendance.create!(
-    event: Event.all.sample),
-    user: User.all.sample
+  Attendance.create(
+    event: Event.all.sample,
+    user: User.all.sample)
 end
